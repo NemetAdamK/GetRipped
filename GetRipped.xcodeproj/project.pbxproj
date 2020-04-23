@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		226DC2B468683DF7055842B4 /* Pods_GetRipped_GetRippedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B63626038981E86DEEE331 /* Pods_GetRipped_GetRippedUITests.framework */; };
 		398264C9B74D327ED1290DD7 /* Pods_GetRippedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B41C1E0C93C8748DCDD62 /* Pods_GetRippedTests.framework */; };
 		7425E5A50C844231A468C935 /* Pods_GetRipped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD87AC13C81F5A36DBAB1DA7 /* Pods_GetRipped.framework */; };
+		E41DF44C2452048E0075C29F /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44B2452048E0075C29F /* NewWorkoutViewController.swift */; };
+		E41DF44E245205470075C29F /* WorkoutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */; };
+		E41DF45024520B640075C29F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44F24520B640075C29F /* Globals.swift */; };
 		E4BB9436245152FC009A8CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB9435245152FC009A8CE2 /* AppDelegate.swift */; };
 		E4BB9438245152FC009A8CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB9437245152FC009A8CE2 /* LoginViewController.swift */; };
 		E4BB943B245152FC009A8CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BB9439245152FC009A8CE2 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		B49AE975D77F0C3C0F401365 /* Pods-GetRipped.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRipped.debug.xcconfig"; path = "Target Support Files/Pods-GetRipped/Pods-GetRipped.debug.xcconfig"; sourceTree = "<group>"; };
 		CD87AC13C81F5A36DBAB1DA7 /* Pods_GetRipped.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetRipped.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3CA3AADD8801A28705EA17B /* Pods-GetRipped-GetRippedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRipped-GetRippedUITests.debug.xcconfig"; path = "Target Support Files/Pods-GetRipped-GetRippedUITests/Pods-GetRipped-GetRippedUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E41DF44B2452048E0075C29F /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
+		E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsViewController.swift; sourceTree = "<group>"; };
+		E41DF44F24520B640075C29F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		E4BB9432245152FC009A8CE2 /* GetRipped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetRipped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BB9435245152FC009A8CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4BB9437245152FC009A8CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +111,6 @@
 				98FFFAC50855FD611A5E21FF /* Pods-GetRippedTests.debug.xcconfig */,
 				7A6F8B400760894BD115A056 /* Pods-GetRippedTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,6 +156,7 @@
 				E4BB943C245152FF009A8CE2 /* Assets.xcassets */,
 				E4BB943E245152FF009A8CE2 /* LaunchScreen.storyboard */,
 				E4BB9441245152FF009A8CE2 /* Info.plist */,
+				E41DF44F24520B640075C29F /* Globals.swift */,
 			);
 			path = GetRipped;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				E4BB9437245152FC009A8CE2 /* LoginViewController.swift */,
 				E4BB9463245160F9009A8CE2 /* SignUpViewController.swift */,
 				E4BB94652451611E009A8CE2 /* HomeViewController.swift */,
+				E41DF44B2452048E0075C29F /* NewWorkoutViewController.swift */,
+				E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -424,9 +432,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4BB9464245160F9009A8CE2 /* SignUpViewController.swift in Sources */,
+				E41DF44E245205470075C29F /* WorkoutDetailsViewController.swift in Sources */,
 				E4BB9438245152FC009A8CE2 /* LoginViewController.swift in Sources */,
 				E4BB9436245152FC009A8CE2 /* AppDelegate.swift in Sources */,
 				E4BB94662451611E009A8CE2 /* HomeViewController.swift in Sources */,
+				E41DF44C2452048E0075C29F /* NewWorkoutViewController.swift in Sources */,
+				E41DF45024520B640075C29F /* Globals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
