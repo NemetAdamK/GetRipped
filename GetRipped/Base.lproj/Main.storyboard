@@ -89,7 +89,7 @@
         <!--Home View Controller-->
         <scene sceneID="KVk-xd-IbJ">
             <objects>
-                <viewController id="iV4-fZ-LJs" customClass="HomeViewController" customModule="GetRipped" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreenVC" id="iV4-fZ-LJs" customClass="HomeViewController" customModule="GetRipped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hAG-hn-TNX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,6 +174,9 @@
                                             <constraint firstAttribute="height" constant="40" id="rWc-T6-eJk"/>
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="XMf-Oa-lWr" eventType="touchUpInside" id="EFL-Pg-2f2"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0t-P3-g8Z">
                                         <rect key="frame" x="0.0" y="360" width="334" height="40"/>
