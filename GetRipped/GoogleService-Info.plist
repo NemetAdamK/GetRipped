@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>931301930735-0gqb11pvsnof3g7ovmtf6omhh3jrln6t.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.931301930735-0gqb11pvsnof3g7ovmtf6omhh3jrln6t</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD0I2LSOrNJpWyp04CKT8JNiQ7SV9_F9ao</string>
+	<key>GCM_SENDER_ID</key>
+	<string>931301930735</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Adams.GetRipped</string>
+	<key>PROJECT_ID</key>
+	<string>getripped-dd1ed</string>
+	<key>STORAGE_BUCKET</key>
+	<string>getripped-dd1ed.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:931301930735:ios:63e83494fd42ed01398d1a</string>
+	<key>DATABASE_URL</key>
+	<string>https://getripped-dd1ed.firebaseio.com</string>
+</dict>
+</plist>

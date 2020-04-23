@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GetRipped/AppDelegate.swift"
-            timestampString = "609316243.770672"
+            timestampString = "609320002.189783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "AppDelegate"
             landmarkType = "3">
             <Locations>
