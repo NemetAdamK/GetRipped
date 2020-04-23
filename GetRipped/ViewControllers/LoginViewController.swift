@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var stackView: UIStackView!
+    
     @IBOutlet weak var loginEmailTextField: UITextField!
     
     @IBOutlet weak var loginPasswordTextField: UITextField!
@@ -23,9 +25,30 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         errorLoginLabel.alpha = 0
+        
+        setButtonLayout(button: loginButton)
+        setButtonLayout(button: signUpButton)
+        setTextViewLayout(textField: loginEmailTextField)
+        setTextViewLayout(textField: loginPasswordTextField)
+        
     }
+    
+    func setTextViewLayout(textField: UITextField){
+        textField.layer.cornerRadius = 20
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.clipsToBounds = true
+    }
+    
+    
+    func setButtonLayout(button: UIButton){
+        button.layer.cornerRadius = 20
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.clipsToBounds = true
+    }
+    
     
     func showError(message: String){
         errorLoginLabel.text = message

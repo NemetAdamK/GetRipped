@@ -27,12 +27,46 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         errorLabel.alpha = 0
+        
+        setTextViewLayout(textField: firstNameTextField)
+        setTextViewLayout(textField: lastNameTextField)
+        setTextViewLayout(textField: emailTextField)
+        setTextViewLayout(textField: passwordTextField)
+        setTextViewLayout(textField: reEnteredPasswordTextField)
+        setButtonLayout(button: signUpButton)
+        setCircularButtonLayout(button: backButton)
+        
 
+    }
+    
+    func setTextViewLayout(textField: UITextField){
+        textField.layer.cornerRadius = 20
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.clipsToBounds = true
+    }
+    
+    
+    func setButtonLayout(button: UIButton){
+        button.layer.cornerRadius = 20
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.clipsToBounds = true
+    }
+    
+    func setCircularButtonLayout(button: UIButton){
+        button.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        button.layer.cornerRadius = button.frame.height * 0.50
+        button.clipsToBounds = true
+        button.layer.borderWidth = 1.0
+
+        view.addSubview(button)
     }
     
     func isValidEmail(inputEmail: String) -> Bool {
@@ -88,6 +122,8 @@ class SignUpViewController: UIViewController {
         view.window?.rootViewController = homeScreenViewController
         view.window?.makeKeyAndVisible()
     }
+    
+   
     
     func showError(message: String){
         errorLabel.text = message
