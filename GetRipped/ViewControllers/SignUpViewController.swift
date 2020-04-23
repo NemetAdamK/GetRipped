@@ -13,9 +13,8 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var firstNameTextField: UITextField!
     
-    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -34,8 +33,7 @@ class SignUpViewController: UIViewController {
         
         errorLabel.alpha = 0
         
-        setTextViewLayout(textField: firstNameTextField)
-        setTextViewLayout(textField: lastNameTextField)
+        setTextViewLayout(textField: userNameTextField)
         setTextViewLayout(textField: emailTextField)
         setTextViewLayout(textField: passwordTextField)
         setTextViewLayout(textField: reEnteredPasswordTextField)
@@ -85,7 +83,7 @@ class SignUpViewController: UIViewController {
     
     func validateInputFields() -> String?{
         
-        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        if userNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             reEnteredPasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
@@ -150,9 +148,8 @@ class SignUpViewController: UIViewController {
                     
                    let db = Firestore.firestore()
                     
-                    let firstName = self.firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    let lastName = self.lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    db.collection("users").addDocument(data: ["firstname" : firstName,"lastname" : lastName,"uid" : result!.user.uid], completion: { (error) in
+                    let username = self.userNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    db.collection("users").addDocument(data: ["username" : username,"email" : userEmail,"uid" : result!.user.uid], completion: { (error) in
                         if error != nil {
                             self.showError(message: "The username and last name couldn't be saved correctly")
                         }

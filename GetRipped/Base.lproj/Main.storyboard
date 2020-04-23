@@ -158,45 +158,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-lt-6hd">
-                                <rect key="frame" x="40" y="256" width="334" height="372"/>
+                                <rect key="frame" x="40" y="256" width="334" height="316"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIz-qo-qqN">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIz-qo-qqN" userLabel="Username Text Field">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="36"/>
                                         <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2vd-5f-Q81">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNm-JO-hHo">
                                         <rect key="frame" x="0.0" y="56" width="334" height="36"/>
                                         <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNm-JO-hHo">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-bq-Vft">
                                         <rect key="frame" x="0.0" y="112" width="334" height="36"/>
                                         <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-bq-Vft">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tF-tn-IeS">
                                         <rect key="frame" x="0.0" y="168" width="334" height="36"/>
                                         <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tF-tn-IeS">
-                                        <rect key="frame" x="0.0" y="224" width="334" height="36"/>
-                                        <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-xI-zJd">
-                                        <rect key="frame" x="0.0" y="280" width="334" height="36"/>
+                                        <rect key="frame" x="0.0" y="224" width="334" height="36"/>
                                         <color key="backgroundColor" red="1" green="0.62352941176470589" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="rWc-T6-eJk"/>
@@ -210,7 +203,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0t-P3-g8Z">
-                                        <rect key="frame" x="0.0" y="336" width="334" height="36"/>
+                                        <rect key="frame" x="0.0" y="280" width="334" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.024170271515557173" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -219,7 +212,6 @@
                                 <constraints>
                                     <constraint firstItem="VNm-JO-hHo" firstAttribute="height" secondItem="x8A-xI-zJd" secondAttribute="height" id="8gZ-ix-kBa"/>
                                     <constraint firstItem="3tF-tn-IeS" firstAttribute="height" secondItem="x8A-xI-zJd" secondAttribute="height" id="JRP-qV-Ojr"/>
-                                    <constraint firstItem="2vd-5f-Q81" firstAttribute="height" secondItem="x8A-xI-zJd" secondAttribute="height" id="Rby-Gi-dXi"/>
                                     <constraint firstItem="I0t-P3-g8Z" firstAttribute="height" secondItem="x8A-xI-zJd" secondAttribute="height" id="lm5-tz-sqh"/>
                                     <constraint firstItem="OVH-bq-Vft" firstAttribute="height" secondItem="x8A-xI-zJd" secondAttribute="height" id="xD0-qX-ZbB"/>
                                     <constraint firstItem="iIz-qo-qqN" firstAttribute="height" secondItem="x8A-xI-zJd" secondAttribute="height" id="zcg-Yk-Xgu"/>
@@ -232,7 +224,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpV-CG-EH6">
-                                <rect key="frame" x="290" y="727" width="70" height="70"/>
+                                <rect key="frame" x="290" y="671" width="70" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4rE-eI-ADb"/>
@@ -266,11 +258,10 @@
                         <outlet property="backButton" destination="gpV-CG-EH6" id="e6z-5O-5iw"/>
                         <outlet property="emailTextField" destination="VNm-JO-hHo" id="p6H-5X-VHy"/>
                         <outlet property="errorLabel" destination="I0t-P3-g8Z" id="PU1-dg-I1S"/>
-                        <outlet property="firstNameTextField" destination="iIz-qo-qqN" id="LIF-6O-hrA"/>
-                        <outlet property="lastNameTextField" destination="2vd-5f-Q81" id="A1a-z7-4R3"/>
                         <outlet property="passwordTextField" destination="OVH-bq-Vft" id="Ud1-oJ-6Rh"/>
                         <outlet property="reEnteredPasswordTextField" destination="3tF-tn-IeS" id="AqM-AJ-Lut"/>
                         <outlet property="signUpButton" destination="x8A-xI-zJd" id="cwE-JV-shp"/>
+                        <outlet property="userNameTextField" destination="iIz-qo-qqN" id="owB-oX-9Iy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDp-1P-9FS" userLabel="First Responder" sceneMemberID="firstResponder"/>
