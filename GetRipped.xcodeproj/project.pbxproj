@@ -14,6 +14,8 @@
 		E41DF44E245205470075C29F /* WorkoutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */; };
 		E41DF45024520B640075C29F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44F24520B640075C29F /* Globals.swift */; };
 		E441A18B2452A5F000890470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E441A18A2452A5F000890470 /* GoogleService-Info.plist */; };
+		E47581E824536152000A5A12 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47581E724536152000A5A12 /* ViewControllerTableViewCell.swift */; };
+		E47581EA24536220000A5A12 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47581E924536220000A5A12 /* WorkoutModel.swift */; };
 		E4BB9436245152FC009A8CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB9435245152FC009A8CE2 /* AppDelegate.swift */; };
 		E4BB9438245152FC009A8CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB9437245152FC009A8CE2 /* LoginViewController.swift */; };
 		E4BB943B245152FC009A8CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BB9439245152FC009A8CE2 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsViewController.swift; sourceTree = "<group>"; };
 		E41DF44F24520B640075C29F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		E441A18A2452A5F000890470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E47581E724536152000A5A12 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		E47581E924536220000A5A12 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		E4BB9432245152FC009A8CE2 /* GetRipped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetRipped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BB9435245152FC009A8CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4BB9437245152FC009A8CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				E4BB943E245152FF009A8CE2 /* LaunchScreen.storyboard */,
 				E4BB9441245152FF009A8CE2 /* Info.plist */,
 				E41DF44F24520B640075C29F /* Globals.swift */,
+				E47581E924536220000A5A12 /* WorkoutModel.swift */,
 			);
 			path = GetRipped;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				E4BB94652451611E009A8CE2 /* HomeViewController.swift */,
 				E41DF44B2452048E0075C29F /* NewWorkoutViewController.swift */,
 				E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */,
+				E47581E724536152000A5A12 /* ViewControllerTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -433,10 +439,12 @@
 			files = (
 				E4BB9464245160F9009A8CE2 /* SignUpViewController.swift in Sources */,
 				E41DF44E245205470075C29F /* WorkoutDetailsViewController.swift in Sources */,
+				E47581E824536152000A5A12 /* ViewControllerTableViewCell.swift in Sources */,
 				E4BB9438245152FC009A8CE2 /* LoginViewController.swift in Sources */,
 				E4BB9436245152FC009A8CE2 /* AppDelegate.swift in Sources */,
 				E4BB94662451611E009A8CE2 /* HomeViewController.swift in Sources */,
 				E41DF44C2452048E0075C29F /* NewWorkoutViewController.swift in Sources */,
+				E47581EA24536220000A5A12 /* WorkoutModel.swift in Sources */,
 				E41DF45024520B640075C29F /* Globals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

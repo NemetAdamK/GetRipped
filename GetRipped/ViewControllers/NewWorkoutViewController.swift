@@ -40,13 +40,21 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupCurrentDate()
         setCircularButtonLayout(button: backButtonOnNewWorkout, view: view)
         setButtonLayout(button: addWorkoutButton)
         setButtonLayout(button: uploadImageButton)
         setTextFieldLayout(textField: workoutNameTextField)
         setTextFieldLayout(textField: burnedCaloriesTextField)
         setTextFieldLayout(textField: workoutDurationTextField)
-
+        
+    }
+    
+    func setupCurrentDate(){
+        let dateNow = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, YYYY hh:mm"
+        pickedDate = dateFormatter.string(from: dateNow)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -66,19 +74,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
         image.delegate = self
         
         image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        /*
-         let alert = UIAlertController(title: "Notice", message: "Lauching this missile will destroy the entire universe. Is this what you intended to do?", preferredStyle: UIAlertController.Style.alert)
-         
-         // add the actions (buttons)
-         alert.addAction(UIAlertAction(title: "Remind Me Tomorrow", style: UIAlertAction.Style.default, handler: nil))
-         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-         alert.addAction(UIAlertAction(title: "Launch the Missile", style: UIAlertAction.Style.destructive, handler: nil))
-         
-         // show the alert
-         self.present(alert, animated: true, completion: nil)
- 
- 
- */
+
         
         image.allowsEditing = false
         self.present(image,animated: true){
@@ -128,6 +124,13 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(alert, animated: true, completion: nil)
     }
     
+    func navigateToHomeScreen(){
+        
+        let homeScreenViewController = storyboard?.instantiateViewController(withIdentifier: "HomeScreenVC")
+        view.window?.rootViewController = homeScreenViewController
+        view.window?.makeKeyAndVisible()
+    }
+    
     @IBAction func addWorkoutPressed(_ sender: Any) {
         burnedCalories = (burnedCaloriesTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
         workoutDuration = (workoutDurationTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
@@ -140,13 +143,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
             
             workOutName = (workoutNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
             if workOutName == ""{
-                if pickedDate == ""{
-                let currentDateTime = Date()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MMM dd, YYYY hh:mm"
-                pickedDate = dateFormatter.string(from:currentDateTime)
-                } else {
-                    workOutName = pickedDate
+                workOutName = pickedDate
                 }
                 
                 
@@ -154,22 +151,13 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
             var ref: DatabaseReference!
             
             ref = Database.database().reference()
-            ref.child("users").child(personalID).childByAutoId().setValue(["workoutName: ": workOutName,"burnedCalories: ": burnedCalories,"pickedDate: ": pickedDate,"workoutDuration: ": workoutDuration, "photoLink" : imageURL])
+            ref.child("users").child(personalID).childByAutoId().setValue(["workoutName": workOutName,"burnedCalories": burnedCalories,"pickedDate": pickedDate,"workoutDuration": workoutDuration, "photoLink" : imageURL])
             
             presentAlert(title: "Success", message: "Workout added")
             
             self.navigateToHomeScreen()
             
         }
-        
 
-    }
-    
-    func navigateToHomeScreen(){
-        
-        let homeScreenViewController = storyboard?.instantiateViewController(withIdentifier: "HomeScreenVC")
-        view.window?.rootViewController = homeScreenViewController
-        view.window?.makeKeyAndVisible()
-    }
 
 }

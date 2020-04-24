@@ -7,15 +7,89 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return workoutList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
+        
+        let workout: WorkoutModel
+        
+        cell.layer.masksToBounds = true
+        cell.layer.borderWidth = 1
+        let borderColor: UIColor = .black
+        cell.layer.borderColor = borderColor.cgColor
+        
+        workout = workoutList[indexPath.row]
+        
+        cell.workoutNameLabel.text = workout.workoutName
+        cell.workoutDateLabel.text = workout.pickedDate
+        var imageURL:String = workout.photoLink ?? ""
+        if  imageURL == ""{
+            imageURL = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg"
+        }
+        if let url = URL(string: imageURL){
+            do {
+                let data = try Data(contentsOf: url)
+                cell.workoutImage.image = UIImage(data: data)
+            } catch let err{
+                print(err.localizedDescription)
+            }
+        }
+        return cell
+    }
+    
 
+    @IBOutlet weak var tableWorkouts: UITableView!
+    
     @IBOutlet weak var homeScreenAddButton: UIButton!
+    
+    
+    var workoutList = [WorkoutModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableWorkouts.rowHeight = 120;
+        print(personalID)
         setCircularButtonLayout(button: homeScreenAddButton,view: view)
+        
+        var i = 0
+        let ref = Database.database().reference().child("users").child(personalID)
+        
+        ref.observe(.value, with: { (snapshot) in
+    
+            for workouts in snapshot.children.allObjects as! [DataSnapshot] {
+                
+               
+                if let workoutObject = workouts.value as? [String: AnyObject]{
+                let workoutName = workoutObject["workoutName"]
+                let workoutDate = workoutObject["pickedDate"]
+                i=i+1
+                    print(i,workoutName as Any)
+                    print(i,workoutDate as Any)
+                let workoutTime = workoutObject["workoutDuration"]
+                let photo = workoutObject["photoLink"]
+                let calories = workoutObject["burnedCalories"]
+                
+                    let workout = WorkoutModel(workoutName: workoutName as! String?,
+                                               workoutDuration: workoutTime as! String?,
+                                               pickedDate: workoutDate as! String?,
+                                               photoLink: photo as! String?,
+                                               burnedCalories: calories as! String?)
+                
+                self.workoutList.append(workout)
+                }
+            }
+            self.tableWorkouts.reloadData()
+        })
+        
+        
     }
     
 

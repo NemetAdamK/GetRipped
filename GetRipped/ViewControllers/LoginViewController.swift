@@ -67,6 +67,7 @@ class LoginViewController: UIViewController {
                 if error != nil {
                     self.showError(message: "Could not sign in")
                 } else{
+                    personalID = result!.user.uid
                     let homeScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreenVC")
                     self.view.window?.rootViewController = homeScreenViewController
                     self.view.window?.makeKeyAndVisible()

@@ -127,7 +127,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="woY-rr-lNr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="woY-rr-lNr" customClass="ViewControllerTableViewCell" customModule="GetRipped" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="woY-rr-lNr" id="uS8-Bw-ak3">
@@ -135,7 +135,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17f-LF-OeS">
-                                                    <rect key="frame" x="200" y="-15" width="223" height="148"/>
+                                                    <rect key="frame" x="230" y="11" width="174" height="88"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wel-qf-TxR">
                                                     <rect key="frame" x="20" y="11" width="180" height="40"/>
@@ -155,21 +155,31 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="17f-LF-OeS" secondAttribute="bottom" constant="-13.5" id="9gZ-5W-8Z1"/>
-                                                <constraint firstAttribute="trailing" secondItem="17f-LF-OeS" secondAttribute="trailing" constant="-9" id="DJj-qJ-6Vl"/>
-                                                <constraint firstItem="17f-LF-OeS" firstAttribute="top" secondItem="uS8-Bw-ak3" secondAttribute="top" constant="-15" id="EIL-GR-mX0"/>
+                                                <constraint firstItem="17f-LF-OeS" firstAttribute="bottom" secondItem="h2L-zY-zHl" secondAttribute="bottom" id="Chg-cz-IfL"/>
+                                                <constraint firstAttribute="trailing" secondItem="17f-LF-OeS" secondAttribute="trailing" constant="10" id="DJj-qJ-6Vl"/>
+                                                <constraint firstItem="17f-LF-OeS" firstAttribute="leading" secondItem="Wel-qf-TxR" secondAttribute="trailing" constant="30" id="Eh5-2l-p5I"/>
                                                 <constraint firstItem="Wel-qf-TxR" firstAttribute="leading" secondItem="uS8-Bw-ak3" secondAttribute="leadingMargin" id="I4K-nu-Fee"/>
                                                 <constraint firstItem="h2L-zY-zHl" firstAttribute="leading" secondItem="uS8-Bw-ak3" secondAttribute="leadingMargin" id="I8u-GG-8EA"/>
                                                 <constraint firstItem="h2L-zY-zHl" firstAttribute="top" secondItem="Wel-qf-TxR" secondAttribute="bottom" constant="8" id="IgW-rN-heK"/>
+                                                <constraint firstItem="17f-LF-OeS" firstAttribute="top" secondItem="Wel-qf-TxR" secondAttribute="top" id="OBw-sd-PDD"/>
                                                 <constraint firstItem="h2L-zY-zHl" firstAttribute="width" secondItem="Wel-qf-TxR" secondAttribute="width" id="hcD-k4-W4o"/>
                                                 <constraint firstItem="Wel-qf-TxR" firstAttribute="top" secondItem="uS8-Bw-ak3" secondAttribute="topMargin" id="n0E-a1-t36"/>
-                                                <constraint firstItem="17f-LF-OeS" firstAttribute="leading" secondItem="Wel-qf-TxR" secondAttribute="trailing" id="pi3-PV-wlo"/>
                                                 <constraint firstItem="h2L-zY-zHl" firstAttribute="top" secondItem="Wel-qf-TxR" secondAttribute="bottom" constant="8" id="sGb-CX-n1T"/>
                                                 <constraint firstItem="h2L-zY-zHl" firstAttribute="height" secondItem="Wel-qf-TxR" secondAttribute="height" id="zAf-eW-itJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="workoutDateLabel" destination="h2L-zY-zHl" id="Hli-oD-jwx"/>
+                                            <outlet property="workoutImage" destination="17f-LF-OeS" id="v7j-2Y-r2J"/>
+                                            <outlet property="workoutNameLabel" destination="Wel-qf-TxR" id="f1b-mT-ufw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iV4-fZ-LJs" id="u41-hn-NPj"/>
+                                    <outlet property="delegate" destination="iV4-fZ-LJs" id="xjK-O7-wIg"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYL-HU-GRw">
                                 <rect key="frame" x="304" y="752" width="70" height="70"/>
@@ -203,11 +213,12 @@
                     </view>
                     <connections>
                         <outlet property="homeScreenAddButton" destination="GYL-HU-GRw" id="jhs-rW-iEf"/>
+                        <outlet property="tableWorkouts" destination="KjN-Gg-QN2" id="Ozm-ZU-mVv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADQ-FN-c0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2446.376811594203" y="351.5625"/>
+            <point key="canvasLocation" x="-2438" y="360"/>
         </scene>
         <!--New Workout View Controller-->
         <scene sceneID="h61-m4-XVF">
@@ -657,7 +668,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6hh-uJ-4sv"/>
+        <segue reference="rny-xD-DOu"/>
         <segue reference="u3l-XJ-3xF"/>
     </inferredMetricsTieBreakers>
 </document>
