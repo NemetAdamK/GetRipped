@@ -168,9 +168,6 @@
                                                 <constraint firstItem="h2L-zY-zHl" firstAttribute="height" secondItem="Wel-qf-TxR" secondAttribute="height" id="zAf-eW-itJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="N7z-aP-0yT" kind="show" id="jgs-Xj-Bd3"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -294,6 +291,7 @@
                                 <rect key="frame" x="171" y="232" width="233" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="q4v-dm-ytU">
@@ -620,16 +618,21 @@
                         <viewLayoutGuide key="safeArea" id="r6c-a3-lwG"/>
                     </view>
                     <connections>
+                        <outlet property="burnedCaloriesLabel" destination="1gI-Zb-6F5" id="EVH-n6-k4P"/>
+                        <outlet property="dateLabel" destination="iX3-49-tqp" id="LBo-p9-sh1"/>
                         <outlet property="detalisScreenBackButton" destination="XLT-ji-wln" id="VBw-Dh-4JG"/>
+                        <outlet property="durationLabel" destination="3r5-bv-zlW" id="uIL-Ba-Mcx"/>
+                        <outlet property="workoutImage" destination="jed-1D-y2e" id="1K4-ct-f0g"/>
+                        <outlet property="workoutNameLabel" destination="nvr-98-Zmf" id="doN-uB-aNC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdl-vK-VmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2428.985507246377" y="1024.5535714285713"/>
+            <point key="canvasLocation" x="-2401" y="1040"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rny-xD-DOu"/>
+        <segue reference="6hh-uJ-4sv"/>
         <segue reference="u3l-XJ-3xF"/>
     </inferredMetricsTieBreakers>
 </document>

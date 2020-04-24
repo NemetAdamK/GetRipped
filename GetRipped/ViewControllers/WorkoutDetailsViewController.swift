@@ -10,6 +10,17 @@ import UIKit
 
 class WorkoutDetailsViewController: UIViewController {
 
+    @IBOutlet weak var workoutNameLabel: UILabel!
+    
+    @IBOutlet weak var burnedCaloriesLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var durationLabel: UILabel!
+    
+    @IBOutlet weak var workoutImage: UIImageView!
+    
+    
     @IBOutlet weak var detalisScreenBackButton: UIButton!
     
     override func viewDidLoad() {
