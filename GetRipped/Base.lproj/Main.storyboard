@@ -218,55 +218,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8w-G5-he5">
-                                <rect key="frame" x="0.0" y="54" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="54" width="443" height="48"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-Fj-lby">
-                                <rect key="frame" x="15" y="152" width="132" height="30"/>
+                                <rect key="frame" x="15" y="152" width="132" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burned calories:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-4X-o3e">
-                                <rect key="frame" x="15" y="232" width="141" height="30"/>
+                                <rect key="frame" x="15" y="242" width="141" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zya-jM-ckc">
-                                <rect key="frame" x="15" y="412" width="74" height="24"/>
+                                <rect key="frame" x="15" y="432" width="103" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration of workout:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut1-Ea-zFK">
-                                <rect key="frame" x="15" y="586" width="177" height="30"/>
+                                <rect key="frame" x="15" y="606" width="177" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-vn-oF0">
-                                <rect key="frame" x="146.5" y="666" width="121" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yId-jT-EQu">
-                                <rect key="frame" x="157" y="740" width="100" height="35"/>
-                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="meP-Zr-D8l"/>
-                                    <constraint firstAttribute="height" constant="35" id="wXb-Vc-5rM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Add workout">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixn-Uk-yBs">
-                                <rect key="frame" x="304" y="752" width="70" height="70"/>
+                                <rect key="frame" x="333" y="752" width="70" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Lph-So-tYA"/>
@@ -281,35 +263,74 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ybf-E6-abb">
-                                <rect key="frame" x="162" y="152" width="242" height="30"/>
+                                <rect key="frame" x="162" y="152" width="271" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VzF-4z-C7A"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJ5-Yd-WdE">
-                                <rect key="frame" x="171" y="232" width="233" height="30"/>
+                                <rect key="frame" x="171" y="242" width="262" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="q4v-dm-ytU">
-                                <rect key="frame" x="104" y="312" width="300" height="224"/>
+                                <rect key="frame" x="133" y="332" width="300" height="224"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="yfR-r9-SCp"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="609353952.28294694">
                                     <!--2020-04-23 16:59:12 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerData:" destination="6j2-xj-tMM" eventType="valueChanged" id="k81-TG-Dtg"/>
+                                </connections>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="urP-vg-d86">
-                                <rect key="frame" x="207" y="586" width="197" height="30"/>
+                                <rect key="frame" x="207" y="606" width="226" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-sa-SoX">
+                                <rect key="frame" x="177" y="669" width="98" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLq-aJ-YZe">
+                                <rect key="frame" x="15" y="685" width="120" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Dho-tZ-MIn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Add image">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addImage:" destination="6j2-xj-tMM" eventType="touchUpInside" id="vQm-EF-62T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yId-jT-EQu">
+                                <rect key="frame" x="161.5" y="770" width="120" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="bYV-ai-7U3"/>
+                                    <constraint firstAttribute="width" constant="120" id="tzx-uh-Yx5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Add workout">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addWorkoutPressed:" destination="6j2-xj-tMM" eventType="touchUpInside" id="JtD-8N-6cR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -319,6 +340,7 @@
                             <constraint firstItem="Jkx-Fj-lby" firstAttribute="leading" secondItem="BgZ-vn-1Yg" secondAttribute="leading" constant="15" id="6bl-zM-Tue"/>
                             <constraint firstItem="GaA-4X-o3e" firstAttribute="top" secondItem="Jkx-Fj-lby" secondAttribute="bottom" constant="50" id="FUM-eV-1ux"/>
                             <constraint firstItem="urP-vg-d86" firstAttribute="top" secondItem="ut1-Ea-zFK" secondAttribute="top" id="G4s-0c-qgj"/>
+                            <constraint firstItem="yId-jT-EQu" firstAttribute="leading" secondItem="BgZ-vn-1Yg" secondAttribute="leading" constant="161.5" id="I4f-bJ-Ld9"/>
                             <constraint firstItem="ut1-Ea-zFK" firstAttribute="top" secondItem="Zya-jM-ckc" secondAttribute="bottom" constant="150" id="JFi-1H-dah"/>
                             <constraint firstItem="Jkx-Fj-lby" firstAttribute="top" secondItem="h8w-G5-he5" secondAttribute="bottom" constant="50" id="JsY-wg-weU"/>
                             <constraint firstItem="BgZ-vn-1Yg" firstAttribute="trailing" secondItem="pJ5-Yd-WdE" secondAttribute="trailing" constant="10" id="JzN-A8-A19"/>
@@ -327,26 +349,27 @@
                             <constraint firstItem="BgZ-vn-1Yg" firstAttribute="trailing" secondItem="urP-vg-d86" secondAttribute="trailing" constant="10" id="Nua-EH-BgE"/>
                             <constraint firstItem="ut1-Ea-zFK" firstAttribute="top" secondItem="q4v-dm-ytU" secondAttribute="bottom" constant="50" id="OMV-bq-d8q"/>
                             <constraint firstItem="q4v-dm-ytU" firstAttribute="top" secondItem="pJ5-Yd-WdE" secondAttribute="bottom" constant="50" id="QcP-Tf-QEK"/>
+                            <constraint firstItem="pJ5-Yd-WdE" firstAttribute="height" secondItem="Ybf-E6-abb" secondAttribute="height" id="Sd7-hD-jIa"/>
+                            <constraint firstItem="lLq-aJ-YZe" firstAttribute="top" secondItem="ut1-Ea-zFK" secondAttribute="bottom" constant="39" id="TmE-uC-4KO"/>
                             <constraint firstItem="yId-jT-EQu" firstAttribute="centerX" secondItem="BgZ-vn-1Yg" secondAttribute="centerX" id="WXN-gh-D4M"/>
                             <constraint firstItem="h8w-G5-he5" firstAttribute="top" secondItem="BgZ-vn-1Yg" secondAttribute="top" constant="10" id="Why-rn-wtk"/>
                             <constraint firstItem="h8w-G5-he5" firstAttribute="leading" secondItem="BgZ-vn-1Yg" secondAttribute="leading" id="Yf4-j4-tbZ"/>
                             <constraint firstItem="Ybf-E6-abb" firstAttribute="height" secondItem="Jkx-Fj-lby" secondAttribute="height" id="Ywm-Oa-nLS"/>
-                            <constraint firstItem="pJ5-Yd-WdE" firstAttribute="height" secondItem="GaA-4X-o3e" secondAttribute="height" id="a5U-tM-7cM"/>
                             <constraint firstItem="BgZ-vn-1Yg" firstAttribute="trailing" secondItem="Ybf-E6-abb" secondAttribute="trailing" constant="10" id="aLu-5G-T38"/>
-                            <constraint firstItem="g7r-vn-oF0" firstAttribute="top" secondItem="ut1-Ea-zFK" secondAttribute="bottom" constant="50" id="aQe-av-g9d"/>
-                            <constraint firstItem="g7r-vn-oF0" firstAttribute="centerX" secondItem="BgZ-vn-1Yg" secondAttribute="centerX" id="dJf-Ft-V6B"/>
                             <constraint firstItem="pJ5-Yd-WdE" firstAttribute="leading" secondItem="GaA-4X-o3e" secondAttribute="trailing" constant="15" id="fzk-1b-lr9"/>
                             <constraint firstItem="urP-vg-d86" firstAttribute="bottom" secondItem="ut1-Ea-zFK" secondAttribute="bottom" id="g3w-V2-ofz"/>
+                            <constraint firstItem="urP-vg-d86" firstAttribute="height" secondItem="pJ5-Yd-WdE" secondAttribute="height" id="hVh-kG-z3T"/>
                             <constraint firstItem="BgZ-vn-1Yg" firstAttribute="trailing" secondItem="q4v-dm-ytU" secondAttribute="trailing" constant="10" id="ivw-Cy-95a"/>
-                            <constraint firstItem="yId-jT-EQu" firstAttribute="top" secondItem="g7r-vn-oF0" secondAttribute="bottom" constant="50" id="ixf-29-IBN"/>
                             <constraint firstItem="BgZ-vn-1Yg" firstAttribute="bottom" secondItem="ixn-Uk-yBs" secondAttribute="bottom" constant="40" id="jth-ew-th2"/>
                             <constraint firstItem="Zya-jM-ckc" firstAttribute="top" secondItem="GaA-4X-o3e" secondAttribute="bottom" constant="150" id="kZi-37-PuI"/>
                             <constraint firstItem="Ybf-E6-abb" firstAttribute="top" secondItem="Jkx-Fj-lby" secondAttribute="top" id="kcG-Rv-pCa"/>
-                            <constraint firstItem="urP-vg-d86" firstAttribute="height" secondItem="pJ5-Yd-WdE" secondAttribute="height" id="lik-Se-YTI"/>
+                            <constraint firstItem="yId-jT-EQu" firstAttribute="top" secondItem="BgZ-vn-1Yg" secondAttribute="top" constant="726" id="m0b-Uk-9BC"/>
                             <constraint firstItem="GaA-4X-o3e" firstAttribute="leading" secondItem="Jkx-Fj-lby" secondAttribute="leading" id="mAP-vF-vNL"/>
+                            <constraint firstItem="lLq-aJ-YZe" firstAttribute="leading" secondItem="ut1-Ea-zFK" secondAttribute="leading" id="nLh-ZV-zZn"/>
                             <constraint firstItem="Ybf-E6-abb" firstAttribute="leading" secondItem="Jkx-Fj-lby" secondAttribute="trailing" constant="15" id="rCo-gR-WKO"/>
                             <constraint firstItem="ut1-Ea-zFK" firstAttribute="leading" secondItem="Zya-jM-ckc" secondAttribute="leading" id="sOD-7s-tMn"/>
                             <constraint firstItem="Ybf-E6-abb" firstAttribute="bottom" secondItem="Jkx-Fj-lby" secondAttribute="bottom" id="tjh-Da-fg9"/>
+                            <constraint firstItem="ixn-Uk-yBs" firstAttribute="leading" secondItem="yId-jT-EQu" secondAttribute="trailing" constant="51.5" id="ttm-TK-jqj"/>
                             <constraint firstItem="q4v-dm-ytU" firstAttribute="leading" secondItem="Zya-jM-ckc" secondAttribute="trailing" constant="15" id="u23-Qa-yKQ"/>
                             <constraint firstItem="Zya-jM-ckc" firstAttribute="leading" secondItem="GaA-4X-o3e" secondAttribute="leading" id="vwf-1L-3QZ"/>
                         </constraints>
@@ -357,6 +380,8 @@
                         <outlet property="backButtonOnNewWorkout" destination="ixn-Uk-yBs" id="9Qa-aL-IO7"/>
                         <outlet property="burnedCaloriesTextField" destination="pJ5-Yd-WdE" id="shO-t8-Nqe"/>
                         <outlet property="datePicker" destination="q4v-dm-ytU" id="Zkb-wb-sbT"/>
+                        <outlet property="uploadImageButton" destination="lLq-aJ-YZe" id="1bQ-eU-5Yw"/>
+                        <outlet property="uploadImageView" destination="G6a-sa-SoX" id="Oqv-EB-tlV"/>
                         <outlet property="workoutDurationTextField" destination="urP-vg-d86" id="EQf-UU-aPY"/>
                         <outlet property="workoutNameTextField" destination="Ybf-E6-abb" id="Ad7-Sh-4N8"/>
                     </connections>

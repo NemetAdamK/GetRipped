@@ -146,15 +146,8 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     
-                   let db = Firestore.firestore()
-                    
-                    let username = self.userNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    db.collection("users").addDocument(data: ["username" : username,"email" : userEmail,"uid" : result!.user.uid], completion: { (error) in
-                        if error != nil {
-                            self.showError(message: "The username and last name couldn't be saved correctly")
-                        }
-                    })
-                    
+                    personalID = result!.user.uid
+            
                     self.navigateToHomeScreen()
                     
                 }

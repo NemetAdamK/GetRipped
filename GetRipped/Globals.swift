@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+var personalID: String = ""
+
 public func setCircularButtonLayout(button: UIButton,view: UIView){
     button.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
     button.layer.cornerRadius = button.frame.height * 0.50
@@ -32,3 +34,5 @@ func setButtonLayout(button: UIButton){
     button.layer.borderColor = UIColor.black.cgColor
     button.clipsToBounds = true
 }
+
+

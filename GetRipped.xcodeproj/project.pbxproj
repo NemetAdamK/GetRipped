@@ -13,6 +13,7 @@
 		E41DF44C2452048E0075C29F /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44B2452048E0075C29F /* NewWorkoutViewController.swift */; };
 		E41DF44E245205470075C29F /* WorkoutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */; };
 		E41DF45024520B640075C29F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41DF44F24520B640075C29F /* Globals.swift */; };
+		E441A18B2452A5F000890470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E441A18A2452A5F000890470 /* GoogleService-Info.plist */; };
 		E4BB9436245152FC009A8CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB9435245152FC009A8CE2 /* AppDelegate.swift */; };
 		E4BB9438245152FC009A8CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB9437245152FC009A8CE2 /* LoginViewController.swift */; };
 		E4BB943B245152FC009A8CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BB9439245152FC009A8CE2 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		E4BB945624515300009A8CE2 /* GetRippedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB945524515300009A8CE2 /* GetRippedUITests.swift */; };
 		E4BB9464245160F9009A8CE2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB9463245160F9009A8CE2 /* SignUpViewController.swift */; };
 		E4BB94662451611E009A8CE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB94652451611E009A8CE2 /* HomeViewController.swift */; };
-		E4BB946D245178BD009A8CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4BB946C245178BD009A8CE2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +53,7 @@
 		E41DF44B2452048E0075C29F /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsViewController.swift; sourceTree = "<group>"; };
 		E41DF44F24520B640075C29F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		E441A18A2452A5F000890470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4BB9432245152FC009A8CE2 /* GetRipped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetRipped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BB9435245152FC009A8CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4BB9437245152FC009A8CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		E4BB945724515300009A8CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BB9463245160F9009A8CE2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E4BB94652451611E009A8CE2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E4BB946C245178BD009A8CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E6FE86112765A90CC34C5D95 /* Pods-GetRipped.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRipped.release.xcconfig"; path = "Target Support Files/Pods-GetRipped/Pods-GetRipped.release.xcconfig"; sourceTree = "<group>"; };
 		F0B63626038981E86DEEE331 /* Pods_GetRipped_GetRippedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetRipped_GetRippedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,7 +149,7 @@
 		E4BB9434245152FC009A8CE2 /* GetRipped */ = {
 			isa = PBXGroup;
 			children = (
-				E4BB946C245178BD009A8CE2 /* GoogleService-Info.plist */,
+				E441A18A2452A5F000890470 /* GoogleService-Info.plist */,
 				E4BB946924516142009A8CE2 /* ViewControllers */,
 				E4BB9435245152FC009A8CE2 /* AppDelegate.swift */,
 				E4BB9439245152FC009A8CE2 /* Main.storyboard */,
@@ -301,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4BB9440245152FF009A8CE2 /* LaunchScreen.storyboard in Resources */,
-				E4BB946D245178BD009A8CE2 /* GoogleService-Info.plist in Resources */,
+				E441A18B2452A5F000890470 /* GoogleService-Info.plist in Resources */,
 				E4BB943D245152FF009A8CE2 /* Assets.xcassets in Resources */,
 				E4BB943B245152FC009A8CE2 /* Main.storyboard in Resources */,
 			);
