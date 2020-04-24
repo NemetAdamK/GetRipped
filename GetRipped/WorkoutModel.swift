@@ -12,18 +12,21 @@ class WorkoutModel{
     var pickedDate: String?
     var photoLink: String?
     var burnedCalories: String?
+    var createdDate: String?
 
     init(workoutName: String?,
     workoutDuration: String?,
     pickedDate: String?,
     photoLink: String?,
-    burnedCalories: String?){
+    burnedCalories: String?,
+    createdDate: String?){
         
         self.workoutName = workoutName
         self.workoutDuration = workoutDuration
         self.pickedDate = pickedDate
         self.photoLink = photoLink
         self.burnedCalories = burnedCalories
+        self.createdDate = createdDate
         
     }
 }

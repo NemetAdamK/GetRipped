@@ -29,11 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.workoutNameLabel.text = workout.workoutName
         cell.workoutDateLabel.text = workout.pickedDate
-        var imageURL:String = workout.photoLink ?? ""
-        if  imageURL == ""{
-            imageURL = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg"
-        }
-        if let url = URL(string: imageURL){
+        if let url = URL(string: workout.photoLink ?? "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg"){
             do {
                 let data = try Data(contentsOf: url)
                 cell.workoutImage.image = UIImage(data: data)
@@ -59,7 +55,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(personalID)
         setCircularButtonLayout(button: homeScreenAddButton,view: view)
         
-        var i = 0
         let ref = Database.database().reference().child("users").child(personalID)
         
         ref.observe(.value, with: { (snapshot) in
@@ -70,18 +65,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if let workoutObject = workouts.value as? [String: AnyObject]{
                 let workoutName = workoutObject["workoutName"]
                 let workoutDate = workoutObject["pickedDate"]
-                i=i+1
-                    print(i,workoutName as Any)
-                    print(i,workoutDate as Any)
                 let workoutTime = workoutObject["workoutDuration"]
                 let photo = workoutObject["photoLink"]
                 let calories = workoutObject["burnedCalories"]
+                let createdDate = workoutObject["createdDate"]
                 
-                    let workout = WorkoutModel(workoutName: workoutName as! String?,
+                let workout = WorkoutModel(workoutName: workoutName as! String?,
                                                workoutDuration: workoutTime as! String?,
                                                pickedDate: workoutDate as! String?,
                                                photoLink: photo as! String?,
-                                               burnedCalories: calories as! String?)
+                                               burnedCalories: calories as! String?,
+                                               createdDate: createdDate as! String?)
                 
                 self.workoutList.append(workout)
                 }

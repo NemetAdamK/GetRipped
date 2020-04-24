@@ -33,6 +33,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
     
     var imageURL: String = ""
     var pickedDate: String = ""
+    var createdDate: String = ""
     var workOutName: String = ""
     var burnedCalories: String = ""
     var workoutDuration: String = ""
@@ -55,6 +56,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, YYYY hh:mm"
         pickedDate = dateFormatter.string(from: dateNow)
+        createdDate = dateFormatter.string(from: dateNow)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -84,6 +86,10 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     
+    func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
     
     func uploadImagePic(img1 :UIImage) {
         guard let imageData: Data = img1.jpegData(compressionQuality: 0.1) else {
@@ -92,8 +98,8 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
         
         let metaDataConfig = StorageMetadata()
         metaDataConfig.contentType = "image/jpg"
-        
-        let storageRef = Storage.storage().reference(withPath: personalID)
+        let randomChildKey = randomString(length: 20)
+        let storageRef = Storage.storage().reference(withPath: personalID).child(randomChildKey)
         
         storageRef.putData(imageData, metadata: metaDataConfig){ (metaData, error) in
             if let error = error {
@@ -151,7 +157,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
             var ref: DatabaseReference!
             
             ref = Database.database().reference()
-            ref.child("users").child(personalID).childByAutoId().setValue(["workoutName": workOutName,"burnedCalories": burnedCalories,"pickedDate": pickedDate,"workoutDuration": workoutDuration, "photoLink" : imageURL])
+        ref.child("users").child(personalID).childByAutoId().setValue(["workoutName": workOutName,"burnedCalories": burnedCalories,"pickedDate": pickedDate,"workoutDuration": workoutDuration, "photoLink" : imageURL,"createdDate" : createdDate])
             
             presentAlert(title: "Success", message: "Workout added")
             
