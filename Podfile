@@ -12,12 +12,19 @@ target 'GetRipped' do
     # Pods for testing
   end
 
+def shared_pods
+	use_frameworks!
+
+end
+
   target 'GetRippedUITests' do
     # Pods for testing
+shared_pods
   end
 
 # add pods for desired Firebase products
 # https://firebase.google.com/docs/ios/setup#available-pods
+
 
 pod 'Firebase/Auth'
 pod 'Firebase/Core'
