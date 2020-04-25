@@ -44,7 +44,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         ref.observe(.value, with: { (snapshot) in
             
-    
+            self.workoutList.removeAll()
             for workouts in snapshot.children.allObjects as! [DataSnapshot] {
                 
                
@@ -62,7 +62,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                                photoLink: photo as! String?,
                                                burnedCalories: calories as! String?,
                                                createdDate: createdDate as! String?)
-                workoutDetailList.append(workout)
                 self.workoutList.append(workout)
                 }
             }
@@ -72,9 +71,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func applicationWillTerminate(_ application: UIApplication) {
-        self.workoutList.removeAll()
-    }
     
     @IBAction func signOutButtonTapped(_ sender: Any) {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure ?", preferredStyle: .actionSheet)
@@ -83,7 +79,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let defaults = UserDefaults.standard
             defaults.removeObject(forKey: "uid")
             defaults.synchronize()
-            self.workoutList.removeAll()
             let homeScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "initController")
             self.view.window?.rootViewController = homeScreenViewController
             self.view.window?.makeKeyAndVisible()
@@ -111,7 +106,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indexOfWorkout = indexPath.row
-        performSegue(withIdentifier: "segue", sender: self)
+        print("Workout index" , indexOfWorkout)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "segue", sender: self)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

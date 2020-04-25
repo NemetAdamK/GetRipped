@@ -11,8 +11,6 @@ import UIKit
 
 var indexOfWorkout = 0
 
-var workoutDetailList = [WorkoutModel]()
-
 var loggedUser = false
 
 public func setCircularButtonLayout(button: UIButton,view: UIView){

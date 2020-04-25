@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class WorkoutDetailsViewController: UIViewController {
 
+    
     @IBOutlet weak var workoutNameLabel: UILabel!
     
     @IBOutlet weak var burnedCaloriesLabel: UILabel!
@@ -22,7 +25,6 @@ class WorkoutDetailsViewController: UIViewController {
     
     @IBOutlet weak var detalisScreenBackButton: UIButton!
     
-    var workoutDetailsMore: WorkoutModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,23 +32,54 @@ class WorkoutDetailsViewController: UIViewController {
         setCircularButtonLayout(button: detalisScreenBackButton, view: view)
         
         
+        print("Workout index2" , indexOfWorkout)
+        var indexSearch = 0
+        let ref = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
+        
+        ref.observe(.value, with: { (snapshot) in
+            
+            
+            for workouts in snapshot.children.allObjects as! [DataSnapshot] {
+                print(indexSearch, indexOfWorkout)
+                if indexSearch==indexOfWorkout {
+                    if let workoutObject = workouts.value as? [String: AnyObject]{
+                        let workoutName = workoutObject["workoutName"]
+                        let workoutDate = workoutObject["pickedDate"]
+                        let workoutTime = workoutObject["workoutDuration"]
+                        let photo = workoutObject["photoLink"]
+                        let calories = workoutObject["burnedCalories"]
+                        
+                        self.workoutNameLabel.text = workoutName as? String
+                        self.burnedCaloriesLabel.text = calories as? String
+                        self.dateLabel.text = workoutDate as? String
+                        self.durationLabel.text = workoutTime as? String
+                        
+                        if let url = URL(string:  photo as? String ?? ""){
+                            do {
+                                let data = try Data(contentsOf: url)
+                                self.workoutImage.image = UIImage(data: data)
+                            } catch let err{
+                                print(err.localizedDescription)
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                indexSearch = indexSearch + 1
+            }
+            
+        })
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         
         
-        workoutDetailsMore = workoutDetailList[indexOfWorkout]
-        workoutNameLabel.text = workoutDetailsMore.workoutName
-        burnedCaloriesLabel.text = workoutDetailsMore.burnedCalories
-        dateLabel.text = workoutDetailsMore.pickedDate
-        durationLabel.text = workoutDetailsMore.workoutDuration
-        if let url = URL(string: workoutDetailsMore.photoLink ?? ""){
-            do {
-                let data = try Data(contentsOf: url)
-                self.workoutImage.image = UIImage(data: data)
-            } catch let err{
-                print(err.localizedDescription)
-            }
-        }
+     
+        
+        
+        
     }
     
 
