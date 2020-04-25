@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.workoutNameLabel.text = workout.workoutName
         cell.workoutDateLabel.text = workout.pickedDate
-        if let url = URL(string: workout.photoLink ?? "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg"){
+        if let url = URL(string: workout.photoLink ?? ""){
             do {
                 let data = try Data(contentsOf: url)
                 cell.workoutImage.image = UIImage(data: data)
@@ -52,7 +52,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         self.tableWorkouts.rowHeight = 120;
-        print(personalID)
+        
+        tableWorkouts.layer.masksToBounds = true
+        tableWorkouts.layer.borderWidth = 1
+        let borderColor: UIColor = .black
+        tableWorkouts.layer.borderColor = borderColor.cgColor
+        tableWorkouts.bounces = false
         setCircularButtonLayout(button: homeScreenAddButton,view: view)
         
         let ref = Database.database().reference().child("users").child(personalID)
