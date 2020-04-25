@@ -27,12 +27,12 @@ class WorkoutDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setCircularButtonLayout(button: detalisScreenBackButton, view: view)
         
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        setCircularButtonLayout(button: detalisScreenBackButton, view: view)
+        
         
         workoutDetailsMore = workoutDetailList[indexOfWorkout]
         workoutNameLabel.text = workoutDetailsMore.workoutName
