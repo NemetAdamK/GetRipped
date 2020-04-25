@@ -72,6 +72,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        self.workoutList.removeAll()
+    }
     
     @IBAction func signOutButtonTapped(_ sender: Any) {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure ?", preferredStyle: .actionSheet)
