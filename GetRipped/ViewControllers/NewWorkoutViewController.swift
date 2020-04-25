@@ -13,7 +13,7 @@ import FirebaseStorage
 import FirebaseFirestore
 
 
-class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var workoutNameTextField: UITextField!
     
@@ -49,7 +49,10 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
         setTextFieldLayout(textField: burnedCaloriesTextField)
         setTextFieldLayout(textField: workoutDurationTextField)
         
+        self.burnedCaloriesTextField.delegate = self;
+        
     }
+    
     
     func setupCurrentDate(){
         let dateNow = Date()
