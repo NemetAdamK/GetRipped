@@ -10,10 +10,15 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    override init(){
+        loggedUser = UserDefaults.standard.object(forKey: "uid") != nil
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.setSplashScreen()
@@ -32,13 +37,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(dismissSplashScreenController), userInfo: nil, repeats: false)
     }
     
+    
+    
     @objc func dismissSplashScreenController() {
-        let mainViewController = UIStoryboard.init(name: "Main", bundle: nil)
-        let rootViewController = mainViewController.instantiateViewController(withIdentifier: "initController")
-        self.window?.rootViewController = rootViewController
-        self.window?.makeKeyAndVisible()
+        
+        
+        
+        if loggedUser {
+            let mainViewController = UIStoryboard.init(name: "Main", bundle: nil)
+            let rootViewController = mainViewController.instantiateViewController(withIdentifier: "HomeScreenVC")
+            self.window?.rootViewController = rootViewController
+            self.window?.makeKeyAndVisible()
+        } else {
+            let mainViewController = UIStoryboard.init(name: "Main", bundle: nil)
+            let rootViewController = mainViewController.instantiateViewController(withIdentifier: "initController")
+            self.window?.rootViewController = rootViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
+        
         
     }
+    
     
     
 

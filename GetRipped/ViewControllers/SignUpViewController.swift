@@ -146,7 +146,9 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     
-                    personalID = result!.user.uid
+                    
+                    UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "uid")
+                    UserDefaults.standard.synchronize()
             
                     self.navigateToHomeScreen()
                     

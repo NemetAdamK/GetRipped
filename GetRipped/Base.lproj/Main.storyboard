@@ -197,10 +197,27 @@
                                     <segue destination="6j2-xj-tMM" kind="show" id="uVI-I8-7ci"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H1-dm-f03">
+                                <rect key="frame" x="40" y="752" width="70" height="70"/>
+                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="2IZ-xe-Oh9"/>
+                                    <constraint firstAttribute="width" constant="70" id="vUA-xa-CPA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButtonTapped:" destination="iV4-fZ-LJs" eventType="touchUpInside" id="Nkz-0b-hgG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3H1-dm-f03" firstAttribute="leading" secondItem="5hJ-mb-SAj" secondAttribute="leading" constant="40" id="0bW-GT-r5J"/>
                             <constraint firstItem="SfU-SL-ouS" firstAttribute="leading" secondItem="5hJ-mb-SAj" secondAttribute="leading" id="2BQ-Yn-JiZ"/>
+                            <constraint firstItem="5hJ-mb-SAj" firstAttribute="bottom" secondItem="3H1-dm-f03" secondAttribute="bottom" constant="40" id="7fw-FB-WR3"/>
                             <constraint firstItem="5hJ-mb-SAj" firstAttribute="bottom" secondItem="GYL-HU-GRw" secondAttribute="bottom" constant="40" id="NMw-qS-z4x"/>
                             <constraint firstItem="KjN-Gg-QN2" firstAttribute="leading" secondItem="5hJ-mb-SAj" secondAttribute="leading" id="Nc6-J1-mwi"/>
                             <constraint firstItem="5hJ-mb-SAj" firstAttribute="bottom" secondItem="KjN-Gg-QN2" secondAttribute="bottom" id="Zuj-rc-Q3B"/>
@@ -214,6 +231,7 @@
                     </view>
                     <connections>
                         <outlet property="homeScreenAddButton" destination="GYL-HU-GRw" id="jhs-rW-iEf"/>
+                        <outlet property="signOutButton" destination="3H1-dm-f03" id="0cV-0s-eWB"/>
                         <outlet property="tableWorkouts" destination="KjN-Gg-QN2" id="Ozm-ZU-mVv"/>
                     </connections>
                 </viewController>
@@ -413,11 +431,12 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RXT-By-uaa"/>
+                        <segue destination="iV4-fZ-LJs" kind="show" id="XGP-Wp-Gzr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKa-Qn-PcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4507" y="352"/>
+            <point key="canvasLocation" x="-4401" y="352"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="rDP-Zj-byY">
@@ -669,7 +688,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rny-xD-DOu"/>
-        <segue reference="u3l-XJ-3xF"/>
+        <segue reference="XGP-Wp-Gzr"/>
+        <segue reference="RXT-By-uaa"/>
     </inferredMetricsTieBreakers>
 </document>

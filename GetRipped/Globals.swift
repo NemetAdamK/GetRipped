@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-var personalID: String = ""
-
 var indexOfWorkout = 0
 
 var workoutDetailList = [WorkoutModel]()
+
+var loggedUser = false
 
 public func setCircularButtonLayout(button: UIButton,view: UIView){
     button.frame = CGRect(x: 160, y: 100, width: 50, height: 50)

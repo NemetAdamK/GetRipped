@@ -99,7 +99,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
         let metaDataConfig = StorageMetadata()
         metaDataConfig.contentType = "image/jpg"
         let randomChildKey = randomString(length: 20)
-        let storageRef = Storage.storage().reference(withPath: personalID).child(randomChildKey)
+        let storageRef = Storage.storage().reference(withPath: Auth.auth().currentUser!.uid).child(randomChildKey)
         
         storageRef.putData(imageData, metadata: metaDataConfig){ (metaData, error) in
             if let error = error {
@@ -157,7 +157,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
             var ref: DatabaseReference!
             
             ref = Database.database().reference()
-        ref.child("users").child(personalID).childByAutoId().setValue(["workoutName": workOutName,"burnedCalories": burnedCalories,"pickedDate": pickedDate,"workoutDuration": workoutDuration, "photoLink" : imageURL,"createdDate" : createdDate])
+        ref.child("users").child(Auth.auth().currentUser!.uid).childByAutoId().setValue(["workoutName": workOutName,"burnedCalories": burnedCalories,"pickedDate": pickedDate,"workoutDuration": workoutDuration, "photoLink" : imageURL,"createdDate" : createdDate])
             
             presentAlert(title: "Success", message: "Workout added")
             

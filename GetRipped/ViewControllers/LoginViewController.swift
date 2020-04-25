@@ -31,8 +31,14 @@ class LoginViewController: UIViewController {
         setButtonLayout(button: signUpButton)
         setTextViewLayout(textField: loginEmailTextField)
         setTextViewLayout(textField: loginPasswordTextField)
+        print("User id from data: " , UserDefaults.standard.object(forKey: "uid") ?? "None")
+        
+        
         
     }
+    
+    
+    
     
     func setTextViewLayout(textField: UITextField){
         textField.layer.cornerRadius = 20
@@ -67,7 +73,9 @@ class LoginViewController: UIViewController {
                 if error != nil {
                     self.showError(message: "Could not sign in")
                 } else{
-                    personalID = result!.user.uid
+                
+                    UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "uid")
+                    UserDefaults.standard.synchronize()
                     let homeScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreenVC")
                     self.view.window?.rootViewController = homeScreenViewController
                     self.view.window?.makeKeyAndVisible()
@@ -77,6 +85,14 @@ class LoginViewController: UIViewController {
         
         
         
+    }
+    
+}
+
+extension UserDefaults {
+    
+    static func exists(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
     
 }
