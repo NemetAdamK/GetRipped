@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
@@ -21,6 +22,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var reEnteredPasswordTextField: UITextField!
+    
+    @IBOutlet weak var acceptTermsSwitch: UISwitch!
     
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -109,6 +112,10 @@ class SignUpViewController: UIViewController {
             return "Passwords do not match"
         }
         
+        if !acceptTermsSwitch.isOn{
+            return "Please accept terms"
+        }
+        
         
         return nil
         
@@ -146,7 +153,10 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     
+                    var ref: DatabaseReference!
                     
+                    ref = Database.database().reference()
+                    ref.child("users").child(Auth.auth().currentUser!.uid).child("user").setValue(["username":self.userNameTextField.text])
                     UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "uid")
                     UserDefaults.standard.synchronize()
             

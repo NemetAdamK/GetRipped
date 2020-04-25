@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var homeScreenAddButton: UIButton!
     
-    @IBOutlet weak var signOutButton: UIButton!
+    
     
     var workoutList = [WorkoutModel]()
     
@@ -38,8 +38,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableWorkouts.layer.borderColor = borderColor.cgColor
         tableWorkouts.bounces = false
         setCircularButtonLayout(button: homeScreenAddButton,view: view)
-        setCircularButtonLayout(button: signOutButton,view: view)
-        
+
+
         let ref = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
         
         ref.observe(.value, with: { (snapshot) in
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.workoutList.removeAll()
             for workouts in snapshot.children.allObjects as! [DataSnapshot] {
                 
-               
+                if workouts.key != "user"{
                 if let workoutObject = workouts.value as? [String: AnyObject]{
                 let workoutName = workoutObject["workoutName"]
                 let workoutDate = workoutObject["pickedDate"]
@@ -65,36 +65,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.workoutList.append(workout)
                 }
             }
+            }
             self.tableWorkouts.reloadData()
         })
         
         
     }
-    
-    
-    @IBAction func signOutButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Sign Out", message: "Are you sure ?", preferredStyle: .actionSheet)
-        print(workoutList.count)
-        let ok = UIAlertAction(title: "Yes", style: .default, handler: { action in
-            let defaults = UserDefaults.standard
-            defaults.removeObject(forKey: "uid")
-            defaults.synchronize()
-            let homeScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "initController")
-            self.view.window?.rootViewController = homeScreenViewController
-            self.view.window?.makeKeyAndVisible()
-            
-        })
-        alert.addAction(ok)
-        let cancel = UIAlertAction(title: "No", style: .default, handler: { action in
-            
-            alert.dismiss(animated: true, completion: nil)
-        })
-        alert.addAction(cancel)
-        DispatchQueue.main.async(execute: {
-            self.present(alert, animated: true)
-        })
-    }
-        
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
