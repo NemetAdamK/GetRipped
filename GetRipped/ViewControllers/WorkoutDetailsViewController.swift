@@ -20,13 +20,33 @@ class WorkoutDetailsViewController: UIViewController {
     
     @IBOutlet weak var workoutImage: UIImageView!
     
-    
     @IBOutlet weak var detalisScreenBackButton: UIButton!
+    
+    var workoutDetailsMore: WorkoutModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         setCircularButtonLayout(button: detalisScreenBackButton, view: view)
+        
+        workoutDetailsMore = workoutDetailList[indexOfWorkout]
+        workoutNameLabel.text = workoutDetailsMore.workoutName
+        burnedCaloriesLabel.text = workoutDetailsMore.burnedCalories
+        dateLabel.text = workoutDetailsMore.pickedDate
+        durationLabel.text = workoutDetailsMore.workoutDuration
+        if let url = URL(string: workoutDetailsMore.photoLink ?? ""){
+            do {
+                let data = try Data(contentsOf: url)
+                self.workoutImage.image = UIImage(data: data)
+            } catch let err{
+                print(err.localizedDescription)
+            }
+        }
     }
     
 

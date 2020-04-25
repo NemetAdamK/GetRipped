@@ -15,7 +15,6 @@ class ViewControllerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var workoutDateLabel: UILabel!
     
-    
     @IBOutlet weak var workoutImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

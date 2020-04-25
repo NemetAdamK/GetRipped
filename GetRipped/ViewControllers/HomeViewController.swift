@@ -11,40 +11,10 @@ import Firebase
 import FirebaseDatabase
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workoutList.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
-        
-        let workout: WorkoutModel
-        
-        cell.layer.masksToBounds = true
-        cell.layer.borderWidth = 1
-        let borderColor: UIColor = .black
-        cell.layer.borderColor = borderColor.cgColor
-        
-        workout = workoutList[indexPath.row]
-        
-        cell.workoutNameLabel.text = workout.workoutName
-        cell.workoutDateLabel.text = workout.pickedDate
-        if let url = URL(string: workout.photoLink ?? ""){
-            do {
-                let data = try Data(contentsOf: url)
-                cell.workoutImage.image = UIImage(data: data)
-            } catch let err{
-                print(err.localizedDescription)
-            }
-        }
-        return cell
-    }
-    
-
     @IBOutlet weak var tableWorkouts: UITableView!
     
     @IBOutlet weak var homeScreenAddButton: UIButton!
-    
     
     var workoutList = [WorkoutModel]()
     
@@ -81,7 +51,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                                photoLink: photo as! String?,
                                                burnedCalories: calories as! String?,
                                                createdDate: createdDate as! String?)
-                
+                workoutDetailList.append(workout)
                 self.workoutList.append(workout)
                 }
             }
@@ -90,6 +60,43 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return workoutList.count
+    }
+    
+    
+
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexOfWorkout = indexPath.row
+        performSegue(withIdentifier: "segue", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
+        
+        let workout: WorkoutModel
+        
+        cell.layer.masksToBounds = true
+        cell.layer.borderWidth = 1
+        let borderColor: UIColor = .black
+        cell.layer.borderColor = borderColor.cgColor
+        
+        workout = workoutList[indexPath.row]
+        
+        cell.workoutNameLabel.text = workout.workoutName
+        cell.workoutDateLabel.text = workout.pickedDate
+        if let url = URL(string: workout.photoLink ?? ""){
+            do {
+                let data = try Data(contentsOf: url)
+                cell.workoutImage.image = UIImage(data: data)
+            } catch let err{
+                print(err.localizedDescription)
+            }
+        }
+        return cell
+    }
+    
     
 
 }
