@@ -90,7 +90,7 @@ class NewWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
             
             workOutName = (workoutNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
             if workOutName == ""{
-                workOutName = pickedDate
+                workOutName = createdDate
                 }
                 
                 
