@@ -10,6 +10,8 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    
+    //Outlets
 
     @IBOutlet weak var stackView: UIStackView!
     
@@ -25,42 +27,13 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        errorLoginLabel.alpha = 0
         
-        setButtonLayout(button: loginButton)
-        setButtonLayout(button: signUpButton)
-        setTextViewLayout(textField: loginEmailTextField)
-        setTextViewLayout(textField: loginPasswordTextField)
-        print("User id from data: " , UserDefaults.standard.object(forKey: "uid") ?? "None")
-        
-        
-        
+        setLoginScreenLayout()
     }
     
     
+    // Login Button pressed hadler
     
-    
-    func setTextViewLayout(textField: UITextField){
-        textField.layer.cornerRadius = 20
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.clipsToBounds = true
-    }
-    
-    
-    func setButtonLayout(button: UIButton){
-        button.layer.cornerRadius = 20
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.black.cgColor
-        button.clipsToBounds = true
-    }
-    
-    
-    func showError(message: String){
-        errorLoginLabel.text = message
-        errorLoginLabel.alpha=1
-    }
-
     @IBAction func loginTapped(_ sender: Any) {
         let email = loginEmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = loginPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -73,9 +46,11 @@ class LoginViewController: UIViewController {
                 if error != nil {
                     self.showError(message: "Could not sign in")
                 } else{
-                
+                    // Saving user as authenticated in UserDefaults
                     UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "uid")
                     UserDefaults.standard.synchronize()
+                    
+                    //Navigate to home screen
                     let homeScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreenVC")
                     self.view.window?.rootViewController = homeScreenViewController
                     self.view.window?.makeKeyAndVisible()
@@ -87,12 +62,39 @@ class LoginViewController: UIViewController {
         
     }
     
-}
-
-extension UserDefaults {
+    // Adding style to login screen elements
     
-    static func exists(key: String) -> Bool {
-        return UserDefaults.standard.object(forKey: key) != nil
+    func setLoginScreenLayout(){
+        errorLoginLabel.alpha = 0
+        setButtonLayout(button: loginButton)
+        setButtonLayout(button: signUpButton)
+        setTextFieldLayout(textField: loginEmailTextField)
+        setTextFieldLayout(textField: loginPasswordTextField)
+    }
+    
+    // Adding style to textField.
+    
+    func setTextFieldLayout(textField: UITextField){
+        textField.layer.cornerRadius = 20
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.clipsToBounds = true
+    }
+    
+    // Adding style to button.
+    
+    func setButtonLayout(button: UIButton){
+        button.layer.cornerRadius = 20
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.clipsToBounds = true
+    }
+    
+    // Set error label visible if error appears
+    
+    func showError(message: String){
+        errorLoginLabel.text = message
+        errorLoginLabel.alpha=1
     }
     
 }

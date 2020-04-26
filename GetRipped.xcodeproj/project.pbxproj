@@ -128,6 +128,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E4880A272455CAD100C9DB60 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E41DF44F24520B640075C29F /* Globals.swift */,
+				E47581E924536220000A5A12 /* WorkoutModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E4880A282455CB0B00C9DB60 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4BB943C245152FF009A8CE2 /* Assets.xcassets */,
+				E441A18A2452A5F000890470 /* GoogleService-Info.plist */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4880A292455CB4100C9DB60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E43432F9245450E200D53AD1 /* LaunchScreen.storyboard */,
+				E4BB9439245152FC009A8CE2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E4BB9429245152FC009A8CE2 = {
 			isa = PBXGroup;
 			children = (
@@ -153,15 +180,11 @@
 		E4BB9434245152FC009A8CE2 /* GetRipped */ = {
 			isa = PBXGroup;
 			children = (
-				E441A18A2452A5F000890470 /* GoogleService-Info.plist */,
-				E4BB946924516142009A8CE2 /* ViewControllers */,
-				E4BB9435245152FC009A8CE2 /* AppDelegate.swift */,
-				E4BB9439245152FC009A8CE2 /* Main.storyboard */,
-				E4BB943C245152FF009A8CE2 /* Assets.xcassets */,
 				E4BB9441245152FF009A8CE2 /* Info.plist */,
-				E41DF44F24520B640075C29F /* Globals.swift */,
-				E47581E924536220000A5A12 /* WorkoutModel.swift */,
-				E43432F9245450E200D53AD1 /* LaunchScreen.storyboard */,
+				E4880A292455CB4100C9DB60 /* View */,
+				E4880A282455CB0B00C9DB60 /* Utils */,
+				E4880A272455CAD100C9DB60 /* Model */,
+				E4BB946924516142009A8CE2 /* ViewController */,
 			);
 			path = GetRipped;
 			sourceTree = "<group>";
@@ -184,9 +207,10 @@
 			path = GetRippedUITests;
 			sourceTree = "<group>";
 		};
-		E4BB946924516142009A8CE2 /* ViewControllers */ = {
+		E4BB946924516142009A8CE2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E4BB9435245152FC009A8CE2 /* AppDelegate.swift */,
 				E4BB9437245152FC009A8CE2 /* LoginViewController.swift */,
 				E4BB9463245160F9009A8CE2 /* SignUpViewController.swift */,
 				E4BB94652451611E009A8CE2 /* HomeViewController.swift */,
@@ -194,7 +218,7 @@
 				E41DF44D245205470075C29F /* WorkoutDetailsViewController.swift */,
 				E47581E724536152000A5A12 /* ViewControllerTableViewCell.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -16,18 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    //Initialise user defaults before use
+    
     override init(){
         loggedUser = UserDefaults.standard.object(forKey: "uid") != nil
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.setSplashScreen()
-        // Override point for customization after application launch.
         
         FirebaseApp.configure()
         
         return true
     }
+    
+    // Set application splash screen to exactly 1.5 seconds
     
     func setSplashScreen(){
         let launchScreenViewController = UIStoryboard.init(name: "LaunchScreen",bundle: nil)
@@ -38,10 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+    // Depending on the user logged status, navigate user to home screen or login screen.
     
     @objc func dismissSplashScreenController() {
-        
-        
         
         if loggedUser {
             let mainViewController = UIStoryboard.init(name: "Main", bundle: nil)

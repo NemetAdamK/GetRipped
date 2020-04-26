@@ -116,12 +116,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-SL-ouS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8z-NZ-sue">
+                                <rect key="frame" x="324" y="49" width="70" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4zc-ve-yrs"/>
+                                    <constraint firstAttribute="width" constant="70" id="XxT-hG-rE2"/>
+                                </constraints>
+                                <state key="normal" title="Profile">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="profileTapped:" destination="iV4-fZ-LJs" eventType="touchUpInside" id="lz3-mt-7Jr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ry0-sN-A8Q">
+                                <rect key="frame" x="20" y="49" width="70" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="iV4-fZ-LJs" eventType="touchUpInside" id="0aJ-Ke-4kr"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37S-Pl-KyU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="48"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-SL-ouS">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SfU-SL-ouS" secondAttribute="bottom" id="C3Q-PB-L6y"/>
+                                    <constraint firstItem="SfU-SL-ouS" firstAttribute="top" secondItem="37S-Pl-KyU" secondAttribute="top" id="EiO-jK-dIm"/>
+                                </constraints>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KjN-Gg-QN2">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,20 +233,28 @@
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SfU-SL-ouS" firstAttribute="leading" secondItem="5hJ-mb-SAj" secondAttribute="leading" id="2BQ-Yn-JiZ"/>
+                            <constraint firstItem="5hJ-mb-SAj" firstAttribute="trailing" secondItem="37S-Pl-KyU" secondAttribute="trailing" id="2C6-Rr-7Os"/>
+                            <constraint firstItem="5hJ-mb-SAj" firstAttribute="trailing" secondItem="K8z-NZ-sue" secondAttribute="trailing" constant="20" id="7Ge-u8-iEl"/>
+                            <constraint firstItem="ry0-sN-A8Q" firstAttribute="leading" secondItem="5hJ-mb-SAj" secondAttribute="leading" constant="20" id="Ab7-ro-9tN"/>
+                            <constraint firstItem="K8z-NZ-sue" firstAttribute="top" secondItem="5hJ-mb-SAj" secondAttribute="top" constant="5" id="JwV-lN-PSy"/>
                             <constraint firstItem="5hJ-mb-SAj" firstAttribute="bottom" secondItem="GYL-HU-GRw" secondAttribute="bottom" constant="40" id="NMw-qS-z4x"/>
                             <constraint firstItem="KjN-Gg-QN2" firstAttribute="leading" secondItem="5hJ-mb-SAj" secondAttribute="leading" id="Nc6-J1-mwi"/>
+                            <constraint firstItem="ry0-sN-A8Q" firstAttribute="width" secondItem="K8z-NZ-sue" secondAttribute="width" id="V8G-2Y-jpb"/>
                             <constraint firstItem="5hJ-mb-SAj" firstAttribute="bottom" secondItem="KjN-Gg-QN2" secondAttribute="bottom" id="Zuj-rc-Q3B"/>
-                            <constraint firstItem="KjN-Gg-QN2" firstAttribute="top" secondItem="SfU-SL-ouS" secondAttribute="bottom" id="eSg-jJ-Aho"/>
+                            <constraint firstItem="37S-Pl-KyU" firstAttribute="bottom" secondItem="KjN-Gg-QN2" secondAttribute="top" id="ek2-tW-riO"/>
                             <constraint firstItem="5hJ-mb-SAj" firstAttribute="trailing" secondItem="GYL-HU-GRw" secondAttribute="trailing" constant="40" id="jN6-gl-h3t"/>
                             <constraint firstItem="5hJ-mb-SAj" firstAttribute="trailing" secondItem="KjN-Gg-QN2" secondAttribute="trailing" id="ldt-wB-LRH"/>
-                            <constraint firstItem="SfU-SL-ouS" firstAttribute="top" secondItem="5hJ-mb-SAj" secondAttribute="top" id="vW5-O2-fb4"/>
-                            <constraint firstItem="5hJ-mb-SAj" firstAttribute="trailing" secondItem="SfU-SL-ouS" secondAttribute="trailing" id="wPb-GO-alP"/>
+                            <constraint firstItem="ry0-sN-A8Q" firstAttribute="top" secondItem="5hJ-mb-SAj" secondAttribute="top" constant="5" id="pch-fc-kxV"/>
+                            <constraint firstItem="37S-Pl-KyU" firstAttribute="top" secondItem="5hJ-mb-SAj" secondAttribute="top" id="wbP-sP-BD4"/>
+                            <constraint firstItem="37S-Pl-KyU" firstAttribute="leading" secondItem="5hJ-mb-SAj" secondAttribute="leading" id="x6o-bI-A4b"/>
+                            <constraint firstItem="ry0-sN-A8Q" firstAttribute="height" secondItem="K8z-NZ-sue" secondAttribute="height" id="zYd-I0-AG9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5hJ-mb-SAj"/>
                     </view>
                     <connections>
                         <outlet property="homeScreenAddButton" destination="GYL-HU-GRw" id="jhs-rW-iEf"/>
+                        <outlet property="profileButton" destination="K8z-NZ-sue" id="f5p-DZ-3k1"/>
+                        <outlet property="signOutButton" destination="ry0-sN-A8Q" id="Yib-Qb-Vck"/>
                         <outlet property="tableWorkouts" destination="KjN-Gg-QN2" id="Ozm-ZU-mVv"/>
                     </connections>
                 </viewController>
@@ -645,36 +686,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyc-8j-67Z">
-                                <rect key="frame" x="40" y="752" width="70" height="70"/>
-                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="Ff7-cc-3h9"/>
-                                    <constraint firstAttribute="height" constant="70" id="xgj-of-HMI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Sign Out">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="signOutTapped:" destination="N7z-aP-0yT" eventType="touchUpInside" id="hUh-Nf-sVd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCw-ZR-738">
-                                <rect key="frame" x="171" y="752" width="70" height="70"/>
-                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="00x-nw-w8S"/>
-                                    <constraint firstAttribute="height" constant="70" id="aiJ-eY-cJi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Profile">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="profileButtonTapped:" destination="N7z-aP-0yT" eventType="touchUpInside" id="ajO-q7-ccg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -683,16 +694,12 @@
                             <constraint firstItem="nvr-98-Zmf" firstAttribute="bottom" secondItem="Qhf-hQ-bRk" secondAttribute="bottom" id="BgH-9d-5nK"/>
                             <constraint firstItem="Qhf-hQ-bRk" firstAttribute="leading" secondItem="r6c-a3-lwG" secondAttribute="leading" constant="15" id="GAs-3g-oXu"/>
                             <constraint firstItem="3r5-bv-zlW" firstAttribute="top" secondItem="EdJ-Wj-4CV" secondAttribute="top" id="GEZ-HQ-erm"/>
-                            <constraint firstItem="r6c-a3-lwG" firstAttribute="bottom" secondItem="LCw-ZR-738" secondAttribute="bottom" constant="40" id="HO8-UX-27p"/>
                             <constraint firstItem="r6c-a3-lwG" firstAttribute="trailing" secondItem="XLT-ji-wln" secondAttribute="trailing" constant="40" id="Ifj-Vc-xdJ"/>
-                            <constraint firstItem="r6c-a3-lwG" firstAttribute="bottom" secondItem="dyc-8j-67Z" secondAttribute="bottom" constant="40" id="Lbw-aa-4p5"/>
                             <constraint firstItem="iX3-49-tqp" firstAttribute="leading" secondItem="B9S-Fn-PLw" secondAttribute="trailing" constant="110.5" id="NuU-nO-UYv"/>
                             <constraint firstItem="r6c-a3-lwG" firstAttribute="top" secondItem="qtq-xj-0lF" secondAttribute="bottom" constant="-85" id="OO5-Ew-hne"/>
                             <constraint firstItem="3r5-bv-zlW" firstAttribute="leading" secondItem="EdJ-Wj-4CV" secondAttribute="trailing" constant="17" id="Pq2-QP-mG3"/>
                             <constraint firstItem="EdJ-Wj-4CV" firstAttribute="leading" secondItem="B9S-Fn-PLw" secondAttribute="leading" id="QII-85-e9t"/>
                             <constraint firstItem="jed-1D-y2e" firstAttribute="leading" secondItem="r6c-a3-lwG" secondAttribute="leading" constant="90" id="R12-gx-oYk"/>
-                            <constraint firstItem="LCw-ZR-738" firstAttribute="leading" secondItem="dyc-8j-67Z" secondAttribute="trailing" constant="61" id="Rcs-Wn-fkN"/>
-                            <constraint firstItem="dyc-8j-67Z" firstAttribute="leading" secondItem="r6c-a3-lwG" secondAttribute="leading" constant="40" id="TSg-GX-fFW"/>
                             <constraint firstItem="qtq-xj-0lF" firstAttribute="leading" secondItem="r6c-a3-lwG" secondAttribute="leading" constant="107" id="TUa-5D-3wd"/>
                             <constraint firstItem="nvr-98-Zmf" firstAttribute="top" secondItem="Qhf-hQ-bRk" secondAttribute="top" id="Ur1-PP-kHm"/>
                             <constraint firstItem="1gI-Zb-6F5" firstAttribute="leading" secondItem="pvR-Jx-PLx" secondAttribute="trailing" constant="68" id="XPC-xp-8Wv"/>
@@ -707,7 +714,6 @@
                             <constraint firstItem="r6c-a3-lwG" firstAttribute="trailing" secondItem="jed-1D-y2e" secondAttribute="trailing" constant="90" id="iAh-i7-E8t"/>
                             <constraint firstItem="r6c-a3-lwG" firstAttribute="trailing" secondItem="qtq-xj-0lF" secondAttribute="trailing" constant="107" id="jmR-Ep-Ytc"/>
                             <constraint firstItem="pvR-Jx-PLx" firstAttribute="leading" secondItem="Qhf-hQ-bRk" secondAttribute="leading" id="lAI-WA-f0H"/>
-                            <constraint firstItem="XLT-ji-wln" firstAttribute="leading" secondItem="LCw-ZR-738" secondAttribute="trailing" constant="63" id="la9-h5-62I"/>
                             <constraint firstItem="jed-1D-y2e" firstAttribute="top" secondItem="EdJ-Wj-4CV" secondAttribute="bottom" constant="100" id="mko-AG-H2b"/>
                             <constraint firstItem="EdJ-Wj-4CV" firstAttribute="top" secondItem="B9S-Fn-PLw" secondAttribute="bottom" constant="50" id="qr5-u4-hNT"/>
                             <constraint firstItem="iX3-49-tqp" firstAttribute="top" secondItem="B9S-Fn-PLw" secondAttribute="top" id="voP-5L-DxQ"/>
@@ -721,8 +727,6 @@
                         <outlet property="dateLabel" destination="iX3-49-tqp" id="LBo-p9-sh1"/>
                         <outlet property="detalisScreenBackButton" destination="XLT-ji-wln" id="VBw-Dh-4JG"/>
                         <outlet property="durationLabel" destination="3r5-bv-zlW" id="uIL-Ba-Mcx"/>
-                        <outlet property="profileButton" destination="LCw-ZR-738" id="FHi-Ie-SMF"/>
-                        <outlet property="signOutButton" destination="dyc-8j-67Z" id="l3e-hE-1Lm"/>
                         <outlet property="workoutImage" destination="jed-1D-y2e" id="1K4-ct-f0g"/>
                         <outlet property="workoutNameLabel" destination="nvr-98-Zmf" id="doN-uB-aNC"/>
                     </connections>
@@ -733,7 +737,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6hh-uJ-4sv"/>
+        <segue reference="cpk-Yh-Gfy"/>
+        <segue reference="rny-xD-DOu"/>
         <segue reference="u3l-XJ-3xF"/>
     </inferredMetricsTieBreakers>
 </document>

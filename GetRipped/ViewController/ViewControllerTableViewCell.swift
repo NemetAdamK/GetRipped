@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewControllerTableViewCell: UITableViewCell {
+    
+    // Outlets
 
     @IBOutlet weak var workoutNameLabel: UILabel!
     
